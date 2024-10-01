@@ -1,0 +1,150 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    height: 100vh;
+    width: 100vw;
+}
+
+.grid-container
+{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(143, 143, 143);
+    row-gap: 1rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.item
+{
+    /* background-color: rgb(231, 132, 12);*/
+    border: 5px solid rgb(255, 255, 255); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header
+{
+    background-color: darkblue;
+    color: white; 
+}
+
+.footer
+{
+    background-color: rgb(50, 203, 172);
+    color: white;
+}
+
+.sidebar
+{
+    background-color: lightgray;
+    color: white;
+    visibility: hidden;
+    display: none;
+}
+
+.mainContent
+{
+    background-color: rgb(229, 126, 74);
+    color: white;
+    padding: 2rem;
+}
+
+/* .content2
+{
+    background-color: rgb(207, 220, 86);
+    border: 5px solid rgb(25, 105, 16);
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column-start:2;
+    grid-column-end: 4;
+} */
+
+/* .content3
+{
+    background-color: rgb(237, 160, 229);
+    border: 5px solid rgb(100, 14, 117);
+    grid-row-start: 2;
+    grid-row-end: 5;
+    grid-column-start:4;
+    grid-column-end: 5;
+} */
+
+@media (min-width: 768px) 
+{
+    .grid-container
+    {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    .header
+    {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 6;
+        
+    }
+
+    .footer
+    {
+        grid-row-start: 5;
+        grid-row-end: 6;
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+
+    .sidebar
+    {
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        visibility: visible;
+        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mainContent
+    {
+        grid-row-start: 2;
+        grid-row-end: 5;
+        grid-column-start:2;
+        grid-column-end: 6;
+    }
+}
+
+@media (max-width: 768px) 
+{
+    .header
+    {
+        grid-row-start: 1;
+        grid-row-end: 2;
+        
+    }
+
+    .mainContent
+    {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .footer
+    {
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+}
